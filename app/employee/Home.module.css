@@ -1,0 +1,35 @@
+/* Home.module.css */
+.homeContainer {
+  padding: 88px; /* 11 * 8px spacing unit (MUI default) */
+  position: relative;
+}
+
+.buttonSection {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin-bottom: 32px;
+  gap: 16px;
+}
+
+.addButton {
+  background-color: #6200ee;
+  color: white;
+  border-radius: 20px;
+  padding: 8px 20px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.addButton:hover {
+  background-color: #5500c8;
+}
+
+.toggleButton {
+  background-color: #6200ee;
+  color: white;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+}
