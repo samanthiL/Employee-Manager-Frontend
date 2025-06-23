@@ -1,12 +1,11 @@
 "use client";
-import React from "react";
 import EmployeeForm from "@/components/EmployeeForm";
-import { Provider } from 'react-redux';
 import { useRouter } from 'next/navigation';
+import React from "react";
 import { useDispatch } from 'react-redux';
-import { store, AppDispatch } from '../../../store';
-import { addEmployee } from '../../../store/employeeSlice';
 import { EmployeeFormData } from '../../../lib/schema';
+import { AppDispatch } from '../../../store';
+import { addEmployee } from '../../../store/employeeSlice';
 const AddEmployee: React.FC = () => {
    const dispatch = useDispatch<AppDispatch>();
   const router = useRouter();

@@ -1,20 +1,19 @@
 'use client';
-import React, { useEffect } from "react";
-import { useForm } from "react-hook-form";
+import { EmployeeFormData, employeeSchema } from '@/lib/schema';
 import { zodResolver } from "@hookform/resolvers/zod";
 import {
   Box,
   Button,
-  Grid,
   MenuItem,
   Paper,
   Stack,
   TextField,
-  Typography,
+  Typography
 } from "@mui/material";
-import { employeeSchema, EmployeeFormData } from '@/lib/schema';
-import { Employee } from '../store/employeeSlice';
 import { useRouter } from 'next/navigation';
+import React, { useEffect } from "react";
+import { useForm } from "react-hook-form";
+import { Employee } from '../store/employeeSlice';
 
 
 interface EmployeeFormProps {
@@ -31,7 +30,6 @@ const genderOptions = [
 const EmployeeForm: React.FC<EmployeeFormProps> = ({
   initialValues,
   onSubmit,
-  onClose,
   editEmployee ,
 }) => {
   const {

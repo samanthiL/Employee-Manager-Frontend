@@ -25,7 +25,7 @@ const EditEmployeePage = () => {
 
   useEffect(() => {
     if (id && employees.length) {
-      const emp = employees.find((e:any) => e.id === id);
+      const emp = employees.find((e) => e.id === id);
       if (emp) {
         setEmployeeToEdit(emp);
       } else {
