@@ -4,7 +4,7 @@ import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 const Navbar = () => {
   return (
-    <AppBar component="nav">
+    <AppBar component="nav" sx={{ bgcolor: '#6200ee' }}>
         <Toolbar>
           <Typography
             variant="h6"
