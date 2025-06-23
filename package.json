@@ -6,7 +6,10 @@
     "dev": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:coverage": "jest --coverage"
   },
   "dependencies": {
     "@emotion/react": "^11.14.0",
@@ -15,6 +18,7 @@
     "@mui/icons-material": "^7.1.2",
     "@mui/material": "^7.1.2",
     "@reduxjs/toolkit": "^2.8.2",
+    "@testing-library/user-event": "^14.6.1",
     "axios": "^1.10.0",
     "next": "15.3.4",
     "react": "^19.0.0",
@@ -35,7 +39,10 @@
     "eslint": "^9",
     "eslint-config-next": "15.3.4",
     "jest": "^30.0.2",
+    "jest-environment-jsdom": "^30.0.2",
     "tailwindcss": "^4",
+    "ts-jest": "^29.4.0",
+    "ts-node": "^10.9.2",
     "typescript": "^5"
   }
 }

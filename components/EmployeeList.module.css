@@ -41,3 +41,42 @@
 .deleteButton {
   padding: 7px;
 }
+.employeeGrid {
+  display: grid;
+  gap: 16px;
+  grid-template-columns: repeat(1, 1fr); /* Default for mobile */
+}
+
+@media (min-width: 600px) {
+  .employeeGrid {
+    grid-template-columns: repeat(2, 1fr); /* For tablets */
+  }
+}
+
+@media (min-width: 960px) {
+  .employeeGrid {
+    grid-template-columns: repeat(3, 1fr); /* For desktops */
+  }
+}
+
+@media (min-width: 1280px) {
+  .employeeGrid {
+    grid-template-columns: repeat(4, 1fr); /* For large screens */
+  }
+}
+
+@media (min-width: 1920px) {
+  .employeeGrid {
+    grid-template-columns: repeat(5, 1fr); /* For extra-large screens */
+  }
+}
+
+.cardEmail {
+  text-decoration: underline;
+}
+
+.cardBox {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
