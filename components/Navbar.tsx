@@ -1,21 +1,13 @@
-import * as React from 'react';
-import AppBar from '@mui/material/AppBar';
-import Toolbar from '@mui/material/Toolbar';
-import Typography from '@mui/material/Typography';
+import * as React from "react";
+
 const Navbar = () => {
   return (
-    <AppBar component="nav" sx={{ bgcolor: '#6200ee' }}>
-        <Toolbar>
-          <Typography
-            variant="h6"
-            component="div"
-            sx={{ flexGrow: 1, display: { xs: 'none', sm: 'block' } }}
-          >
-            Employee Manager
-          </Typography>
-        </Toolbar>
-      </AppBar>
-  )
-}
+    <header
+      style={{ padding: "1rem", backgroundColor: "#6200ee", color: "white" }}
+    >
+      Employee Manager
+    </header>
+  );
+};
 
-export default Navbar
+export default Navbar;

@@ -15,13 +15,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-      >
+      <body>
         <Navbar />
-      <main className="container mx-auto px-4 py-6">
-         <Providers>
-          {children}
-        </Providers>  
+        <main className="container mx-auto px-4 py-6">
+          <Providers>{children}</Providers>
         </main>
       </body>
     </html>
