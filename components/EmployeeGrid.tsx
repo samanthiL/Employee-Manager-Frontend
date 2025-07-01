@@ -10,7 +10,7 @@ import DeleteIcon from "@mui/icons-material/Delete";
 import ModeEditIcon from "@mui/icons-material/ModeEdit";
 import { Employee } from '../store/employeeSlice';
 import { useRouter } from 'next/navigation';
-import styles from './EmployeeList.module.css';  // import CSS module
+import styles from './EmployeeList.module.css'; 
 
 type Props = {
   employee: Employee[];

@@ -3,7 +3,7 @@ import { Table, TableHead, TableBody, TableRow, TableCell, Button, Avatar, Paper
 import { useRouter } from 'next/navigation';
 import { Employee } from '../store/employeeSlice';
 import DeleteIcon from '@mui/icons-material/Delete';
-import styles from './EmployeeList.module.css';  // import CSS module
+import styles from './EmployeeList.module.css';  
 
 type Props = {
   employees : Employee[];
@@ -77,49 +77,6 @@ const EmployeeList: React.FC<Props> = ({ employees , onDelete }) => {
         </TableBody>
       </Table>
     </TableContainer>
-    // <Table>
-    //   <TableHead>
-    //     <TableRow>
-    //       <TableCell>Photo</TableCell>
-    //       <TableCell>First Name</TableCell>
-    //       <TableCell>Last Name</TableCell>
-    //       <TableCell>Email</TableCell>
-    //       <TableCell>Phone</TableCell>
-    //       <TableCell>Gender</TableCell>
-    //       <TableCell>Actions</TableCell>
-    //     </TableRow>
-    //   </TableHead>
-    //   <TableBody>
-    //     {employee.map((emp) => (
-    //       <TableRow key={emp.id}>
-    //        <TableCell><Avatar alt={emp.first_name} src={emp.photo} /></TableCell>
-    //         <TableCell>{emp.first_name}</TableCell>
-    //         <TableCell>{emp.last_name}</TableCell>
-    //         <TableCell>{emp.id}</TableCell>
-    //         <TableCell>{emp.number}</TableCell>
-    //         <TableCell>{emp.gender}</TableCell>
-    //        <TableCell>
-    //           <Button
-    //             onClick={() => handleEditClick(emp.id)}
-    //             variant="contained"
-    //             size="small"
-    //             sx={{ mr: 1 }}
-    //           >
-    //             Edit
-    //           </Button>
-    //           <Button
-    //             onClick={() => onDelete(emp.id)}
-    //             variant="outlined"
-    //             color="error"
-    //             size="small"
-    //           >
-    //             Delete
-    //           </Button>
-    //           </TableCell>
-    //       </TableRow>
-    //     ))}
-    //   </TableBody>
-    // </Table>
   );
 }
 export default EmployeeList
