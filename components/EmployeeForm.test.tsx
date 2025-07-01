@@ -1,4 +1,3 @@
-// EmployeeForm.test.tsx
 
 import React from "react";
 import { render, screen, waitFor } from "@testing-library/react";
@@ -6,7 +5,6 @@ import  EmployeeForm from "./EmployeeForm";
 import { useRouter } from "next/navigation";
 import userEvent from "@testing-library/user-event";
 
-// Mock useRouter hook from Next.js
 jest.mock("next/navigation", () => ({
   useRouter: jest.fn(),
 }));

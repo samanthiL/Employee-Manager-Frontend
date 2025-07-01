@@ -1,5 +1,5 @@
-'use client';
-import { EmployeeFormData, employeeSchema } from '@/lib/schema';
+"use client";
+import { EmployeeFormData, employeeSchema } from "@/lib/schema";
 import { zodResolver } from "@hookform/resolvers/zod";
 import {
   Box,
@@ -8,29 +8,29 @@ import {
   Paper,
   Stack,
   TextField,
-  Typography
+  Typography,
 } from "@mui/material";
-import { useRouter } from 'next/navigation';
+import { useRouter } from "next/navigation";
 import React, { useEffect } from "react";
 import { useForm } from "react-hook-form";
-import { Employee } from '../store/employeeSlice';
-
+import { Employee } from "../store/employeeSlice";
 
 interface EmployeeFormProps {
   initialValues?: EmployeeFormData;
   onSubmit: (data: EmployeeFormData) => void;
-   onClose: () => void;
-editEmployee?: Employee | null;}
+  onClose: () => void;
+  editEmployee?: Employee | null;
+}
 
 const genderOptions = [
-  { value: 'M', label: 'Male' },
-  { value: 'F', label: 'Female' },
+  { value: "M", label: "Male" },
+  { value: "F", label: "Female" },
 ];
 
 const EmployeeForm: React.FC<EmployeeFormProps> = ({
   initialValues,
   onSubmit,
-  editEmployee ,
+  editEmployee,
 }) => {
   const {
     register,
@@ -39,133 +39,29 @@ const EmployeeForm: React.FC<EmployeeFormProps> = ({
     reset,
   } = useForm<EmployeeFormData>({
     resolver: zodResolver(employeeSchema),
-defaultValues: {
-  first_name: initialValues?.first_name ?? '',
-  last_name: initialValues?.last_name ?? '',
-  email: initialValues?.email ?? '',
-  number: initialValues?.number ?? '',
-  gender: initialValues?.gender ?? 'M',
-},
-
+    defaultValues: {
+      first_name: initialValues?.first_name ?? "",
+      last_name: initialValues?.last_name ?? "",
+      email: initialValues?.email ?? "",
+      number: initialValues?.number ?? "",
+      gender: initialValues?.gender ?? "M",
+    },
   });
-     const router = useRouter();
+  const router = useRouter();
 
-
- useEffect(() => {
+  useEffect(() => {
     if (editEmployee) {
       reset({
-        first_name: editEmployee.first_name?? '',
-      last_name: editEmployee.last_name ?? '',
-      email: editEmployee.email ?? '',
-      number: editEmployee.number ?? '',
-      gender: editEmployee.gender ?? 'M',
+        first_name: editEmployee.first_name ?? "",
+        last_name: editEmployee.last_name ?? "",
+        email: editEmployee.email ?? "",
+        number: editEmployee.number ?? "",
+        gender: editEmployee.gender ?? "M",
       });
     }
   }, [editEmployee, reset]);
   return (
-//      <Box sx={{ p: 5 }}>
-
-//   <Box sx={{ width: 500, mb: 7, justifyContent: 'flex-end' }}>
-//         <Button 
-//           variant="outlined" 
-//           sx={{ borderRadius: '20px' }}
-//             onClick={() => router.push('/employee/list')}
-//         >
-//           List View
-//         </Button>
-//         </Box>
-//   <Box sx={{ display: 'flex', justifyContent: 'center', p: 5 }}>
-    
-//        <Paper sx={{ p: 4, width: 500 }}>
-//         <form onSubmit={handleSubmit(onSubmit)} noValidate>
-//           <Stack spacing={2} direction={"column"}>
-//             {[
-//               { label: "First Name", name: "first_name", type: "text" },
-//               { label: "Last Name", name: "last_name", type: "text" },
-//               { label: "Email", name: "email", type: "email" },
-//               { label: "Phone Number", name: "number", type: "text" },
-//             ].map(({ label, name, type }, i) => (
-//               <Stack
-//                 key={i}
-//                 direction={"row"}
-//                 spacing={1}
-//                 justifyContent={"space-between"}
-//                 alignItems={"center"}
-//               >
-//                 <Typography>{label}</Typography>
-//                 <TextField
-//                   size="small"
-//                   type={type}
-//                   {...register(name as keyof EmployeeFormData)}
-//                   error={!!errors[name as keyof EmployeeFormData]}
-//                   helperText={errors[name as keyof EmployeeFormData]?.message}
-//                 />
-//               </Stack>
-//             ))}
-
-//            <Stack
-                
-//                 direction={"row"}
-//                 spacing={1}
-//                 justifyContent={"space-between"}
-//                 alignItems={"center"}
-//               >
-//             {/* <Typography>Gender</Typography> */}
-          
-//              <TextField
-//               select
-//               fullWidth
-//               {...register("gender")}
-//               error={!!errors.gender}
-//               helperText={errors.gender?.message}
-//             >
-//             {genderOptions.map((option) => (
-//                     <MenuItem key={option.value} value={option.value}>
-//                       {option.label}
-//                     </MenuItem>
-//                   ))}
-//             </TextField> 
-             
-// {/* 
-//              <Grid container spacing={2} alignItems="center">
-//                <Grid size={3}>
-//                 <Typography>Gender</Typography>
-//               </Grid>
-//                <Grid size={4}>
-//                 <TextField
-//                   select
-//                   fullWidth
-//                   size="small"
-//                   {...register('gender')}
-//                   error={!!errors.gender}
-//                   helperText={errors.gender?.message}
-//                 >
-//                   {genderOptions.map((option) => (
-//                     <MenuItem key={option.value} value={option.value}>
-//                       {option.label}
-//                     </MenuItem>
-//                   ))}
-//                 </TextField>
-//              </Grid>
-//              </Grid> */}
-//              </Stack>
-//            <Stack direction="row" spacing={2} justifyContent="flex-end">
-//               <Button type="button" onClick={onClose} color="secondary">
-//                 Cancel
-//               </Button>
-//               <Button type="submit" variant="contained" disabled={isSubmitting}>
-//                 {editEmployee ? 'Update' : 'Submit'}
-//               </Button>
-//             </Stack>
-//           </Stack>
-//         </form>
-//       </Paper>
-//     </Box>
-//     </Box>
-
- 
     <Box sx={{ px: 4, py: 9 }}>
-      {/* Top button */}
       <Box
         sx={{
           display: "flex",
@@ -175,13 +71,13 @@ defaultValues: {
       >
         <Button
           variant="contained"
- sx={{
-        borderRadius: '20px',
-           bgcolor: '#6200ee', 
-             color: 'white',    // Set text color to white
-         width:'145px' 
-
-    }}          onClick={() => router.push("/employee/list")}
+          sx={{
+            borderRadius: "20px",
+            bgcolor: "#6200ee",
+            color: "white",
+            width: "145px",
+          }}
+          onClick={() => router.push("/employee/list")}
         >
           List View
         </Button>
@@ -220,9 +116,7 @@ defaultValues: {
                     fullWidth
                     {...register(name as keyof EmployeeFormData)}
                     error={!!errors[name as keyof EmployeeFormData]}
-                    helperText={
-                      errors[name as keyof EmployeeFormData]?.message
-                    }
+                    helperText={errors[name as keyof EmployeeFormData]?.message}
                   />
                 </Stack>
               ))}
@@ -239,7 +133,7 @@ defaultValues: {
                   select
                   fullWidth
                   size="small"
-                    defaultValue="M" // ✅ fallback for SSR render
+                  defaultValue="M" 
                   {...register("gender")}
                   error={!!errors.gender}
                   helperText={errors.gender?.message}
@@ -263,8 +157,7 @@ defaultValues: {
                   type="submit"
                   variant="outlined"
                   disabled={isSubmitting}
-                  sx={{color:'#6200ee',borderColor: '#6200ee' }}
-
+                  sx={{ color: "#6200ee", borderColor: "#6200ee" }}
                 >
                   {editEmployee ? "Save" : "Add"}
                 </Button>

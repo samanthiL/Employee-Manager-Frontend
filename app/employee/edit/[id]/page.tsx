@@ -1,7 +1,7 @@
 'use client'
 import { useEffect, useState } from "react";
 import EmployeeForm from "@/components/EmployeeForm";
-import { useRouter, useParams } from 'next/navigation'; // ✅ useParams for App Router
+import { useRouter, useParams } from 'next/navigation'; 
 import { useSelector, useDispatch } from 'react-redux';
 import { RootState, AppDispatch } from '../../../../store';
 import { Employee, updateEmployee, fetchEmployees } from '../../../../store/employeeSlice';
@@ -10,7 +10,7 @@ import { EmployeeFormData } from '../../../../lib/schema';
 const EditEmployeePage = () => {
   const router = useRouter();
   const params = useParams();
-  const id = params.id as string; // ✅ safely cast
+  const id = params.id as string; 
 
   const dispatch = useDispatch<AppDispatch>();
   const employees = useSelector((state: RootState) => state.employees.employees);
